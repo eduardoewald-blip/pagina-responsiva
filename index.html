@@ -47,3 +47,53 @@
   <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interativo - Projeto Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">MeuProjeto</div>
+    <nav class="nav">
+      <a href="index.html">Voltar ao Início</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="quiz-card">
+      <h1 class="quiz-title">Quiz de Conhecimentos Gerais</h1>
+      
+      <!-- Container das Pergunta e Opções -->
+      <div id="quiz-container">
+        <h2 id="question-text">Carregando pergunta...</h2>
+        
+        <!-- Imagem da Pergunta -->
+        <div class="image-container">
+          <img id="question-image" src="" alt="Imagem da Pergunta">
+        </div>
+
+        <!-- Opções de Resposta -->
+        <div id="options-container" class="options-grid"></div>
+      </div>
+
+      <!-- Tela de Resultado Final -->
+      <div id="result-container" class="hidden">
+        <h2>Quiz Finalizado! 🎉</h2>
+        <p id="score-text"></p>
+        <button class="btn" onclick="restartQuiz()">Tentar Novamente</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 - Criado para o Projeto Escolar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
