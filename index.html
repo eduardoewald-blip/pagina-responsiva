@@ -1,73 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Dev Superior - Desafio Hover</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header">
-    <nav class="nav">
-      <a href="#">Blog</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <main class="feed">
-
-      <article class="card">
-        <img src="https://picsum.photos/300/180?random=1" alt="Imagem do post" class="card-img">
-        <div class="card-content">
-          <h2>Como a Tecnologia Está Mudando as Nossas Vidas</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-          <span class="card-date">15 de Outubro de 2024</span>
+    <!-- Topo do Site -->
+    <header class="main-header">
+        <div class="header-left">
+            <h1 class="logo-text">Blog Dev Superior <span>- Desafio Hover</span></h1>
         </div>
-        <button class="card-btn">Leia mais</button>
-      </article>
-
-      <article class="card">
-        <img src="https://picsum.photos/300/180?random=2" alt="Imagem do post" class="card-img">
-        <div class="card-content">
-          <h2>O Guia Definitivo para um Estilo de Vida Saudável</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-          <span class="card-date">15 de Outubro de 2024</span>
+        <div class="header-right">
+            <span class="nav-item">Article</span>
+            <button id="theme-toggle" class="profile-theme-btn" aria-label="Alternar Tema">
+                <img src="https://unsplash.com" alt="Profile" class="profile-img">
+                <span class="theme-indicator-dot"></span>
+            </button>
         </div>
-        <button class="card-btn">Leia mais</button>
-      </article>
+    </header>
 
-      <article class="card">
-        <img src="https://picsum.photos/300/180?random=3" alt="Imagem do post" class="card-img">
-        <div class="card-content">
-          <h2>Como a Tecnologia Está Mudando as Nossas Vidas</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-          <span class="card-date">16 de Outubro de 2024</span>
+    <!-- Barra de Pesquisa e Filtros -->
+    <section class="search-section">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Search..." class="search-input">
         </div>
-        <button class="card-btn">Leia mais</button>
-      </article>
+        <div class="pagination-top">
+            <span class="page-num active">1</span>
+            <span class="page-num">2</span>
+            <span class="page-num">3</span>
+            <span class="page-dots">...</span>
+        </div>
+    </section>
+
+    <!-- Grid de Postagens Principais -->
+    <main class="main-grid">
+        
+        <!-- CARD GRANDE (Destaque Superior) -->
+        <article class="post-card featured-card">
+            <div class="card-preview-area">
+                <div class="window-mockup">
+                    <div class="window-header">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="window-body">
+                        <div class="mock-line title-line"></div>
+                        <div class="mock-line code-line-1"></div>
+                        <div class="mock-line code-line-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-info-area">
+                <h2 class="card-title">Blog Dev Superior - Desafio Hover</h2>
+                <h3 class="card-subtitle">Dominando CSS Grid</h3>
+                <p class="card-description">Dominando CSS Grid. Apr profesømas ssleriess sa sal everyiage cove a declomente optiodos per coopotads. En prtaseden actis que la cade con commumetata fliske sali apriars...</p>
+                <div class="card-tags">
+                    <span class="tag-pill">HTML</span>
+                    <span class="tag-pill">CSS</span>
+                </div>
+                <div class="card-author">
+                    <img src="https://unsplash.com" alt="Author" class="author-thumb">
+                    <span class="author-name">Joh Jehon Rerson</span>
+                </div>
+            </div>
+        </article>
 
     </main>
 
-    <aside class="sidebar">
-      <h3>Categorias</h3>
-      <ul>
-        <li><a href="#">Tecnologia</a></li>
-        <li><a href="#">Saúde</a></li>
-        <li><a href="#">Estilo de Vida</a></li>
-      </ul>
+    <!-- Seção de Estados e Demonstração do Hover -->
+    <section class="hover-gallery-section">
+        <div class="section-divider-title">
+            <span class="title-decor">✦</span>
+            <h2>HOVER STATE</h2>
+            <span class="title-decor">✦</span>
+        </div>
 
-      <h3>Tags</h3>
-      <div class="tags">
-        <span>Web</span>
-        <span>Design</span>
-        <span>CSS</span>
-      </div>
-    </aside>
-  </div>
+        <!-- Grid Inferior com os 3 Cards Lado a Lado -->
+        <div class="secondary-grid">
+            
+            <!-- Card Esquerdo (Estado Focado/Hover Ativo) -->
+            <article class="post-card thumb-card hover-forced">
+                <div class="card-preview-area">
+                    <div class="window-mockup">
+                        <div class="window-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                        <div class="window-body-grid">
+                            <div class="grid-box"></div>
+                            <div class="grid-box"></div>
+                            <div class="grid-box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info-area">
+                    <h3 class="card-subtitle">Dominando CSS Grid</h3>
+                    <p class="card-description">Dominando CSS Grid, an nescendo sothmg ai tre wesowr Domsstisn, l...</p>
+                    <div class="card-tags">
+                        <span class="tag-pill">HTML</span>
+                        <span class="tag-pill">CSS</span>
+                    </div>
+                    <div class="card-author">
+                        <img src="https://unsplash.com" alt="Author" class="author-thumb">
+                        <span class="author-name">Ilife info Superan</span>
+                    </div>
+                </div>
+            </article>
 
-  <script src="script.js"></script>
+            <!-- Card Central -->
+            <article class="post-card thumb-card">
+                <div class="card-preview-area">
+                    <div class="window-mockup blueprint-style">
+                        <div class="blueprint-lines"></div>
+                    </div>
+                </div>
+                <div class="card-info-area">
+                    <h3 class="card-subtitle">Dominando CSS Grid</h3>
+                    <p class="card-description">Dominando CSS Grid, a o sescende scäling at the wesboe: Domsattion, i...</p>
+                    <div class="card-tags">
+                        <span class="tag-pill">HTML</span>
+                        <span class="tag-pill">CSS</span>
+                    </div>
+                    <div class="card-author">
+                        <img src="https://unsplash.com" alt="Author" class="author-thumb">
+                        <span class="author-name">Ilife info Superon</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card Direito -->
+            <article class="post-card thumb-card">
+                <div class="card-preview-area">
+                    <div class="window-mockup dark-ui-style">
+                        <div class="window-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info-area">
+                    <h3 class="card-subtitle">Dominando CSS Grid</h3>
+                    <p class="card-description">Dominando CSS Grid, an reosnande scaleg, as the wasenar: 'iampattiery 1...</p>
+                    <div class="card-tags">
+                        <span class="tag-pill">HTML</span>
+                        <span class="tag-pill">CSS</span>
+                    </div>
+                    <div class="card-author">
+                        <img src="https://unsplash.com" alt="Author" class="author-thumb">
+                        <span class="author-name">Ilife info Soporen</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Paginação Inferior -->
+    <footer class="pagination-footer">
+        <button class="pag-arrow">&lt;</button>
+        <span class="page-num active">1</span>
+        <span class="page-num">2</span>
+        <span class="page-num">3</span>
+        <span class="page-num">4</span>
+        <span class="page-dots">...</span>
+        <button class="pag-arrow">&gt;</button>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
