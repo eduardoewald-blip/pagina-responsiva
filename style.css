@@ -1,127 +1,400 @@
+/* ==========================================================================
+   SISTEMA DE CORES CORPORATIVO (ROSA E MAGENTA PREMIUM)
+   ========================================================================== */
+:root {
+    /* Modo Claro (Inspirado no lado esquerdo da imagem) */
+    --bg-global: #fcf6f8;
+    --bg-surface: #ffffff;
+    --border-color: #f3e5e9;
+    --text-title: #4a1525;
+    --text-body: #6b585e;
+    --text-muted: #9c8a90;
+    
+    /* Paleta Pink Premium */
+    --brand-pink: #d23669;
+    --brand-pink-light: #fcecef;
+    --brand-pink-alpha: rgba(210, 54, 105, 0.05);
+    
+    /* Configuração Exata do Desafio de Sombra (Modo Claro) */
+    --shadow-normal: 0 4px 14px rgba(210, 54, 105, 0.05);
+    --shadow-hover: 0 15px 30px rgba(210, 54, 105, 0.15);
+    
+    --transition-perfect: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modo Escuro (Inspirado no lado direito da imagem) */
+[data-theme="dark"] {
+    --bg-global: #160d10;
+    --bg-surface: #221418;
+    --border-color: #361f26;
+    --text-title: #fcecef;
+    --text-body: #d9c5cb;
+    --text-muted: #917c82;
+    
+    --brand-pink-light: #321620;
+    --brand-pink-alpha: rgba(210, 54, 105, 0.1);
+    
+    /* Sombra de profundidade + Efeito Neon Brilhante pedido no desafio */
+    --shadow-normal: 0 6px 20px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 0 25px rgba(210, 54, 105, 0.55), 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   ESTRUTURA DA INTERFACE E LAYOUT
+   ========================================================================== */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #1f2937;
-  color: #333;
+    background-color: var(--bg-global);
+    color: var(--text-body);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 2.5rem 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-/* Header */
-.header {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
+/* Topo / Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
 }
 
-.nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #111827;
-  font-weight: bold;
+.logo-text {
+    font-size: 1.5rem;
+    color: var(--text-title);
+    font-weight: 700;
 }
 
-/* Layout Principal */
-.container {
-  display: flex;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
-  gap: 30px;
+.logo-text span {
+    font-weight: 400;
+    color: var(--brand-pink);
+    font-size: 1.2rem;
 }
 
-.feed {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.nav-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-right: 1.5rem;
 }
 
-/* Cards (Atendendo ao desafio) */
-article {
-  display: flex;
-  flex-direction: row; /* Conteúdo em linha */
-  flex: 1 1 100%;       /* Ocupa 100% da largura do container */
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 15px;
-  align-items: center;
-  gap: 20px;
+/* Botão de Perfil / Alternador de Tema */
+.profile-theme-btn {
+    background: none;
+    border: 2px solid var(--brand-pink);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    padding: 2px;
+    transition: var(--transition-perfect);
 }
 
-.card-img {
-  width: 220px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 6px;
-  align-self: flex-start; /* Quebra o alinhamento padrão */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.card-content {
-  flex: 1;
+.theme-indicator-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #4cd964;
+    border: 2px solid var(--bg-surface);
+    border-radius: 50%;
 }
 
-.card-content h2 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  color: #111827;
+/* Seção de Pesquisa e Filtros */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
 }
 
-.card-content p {
-  font-size: 0.9rem;
-  color: #4b5563;
-  margin-bottom: 12px;
+.search-container {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    align-items: center;
+    width: 320px;
+    box-shadow: var(--shadow-normal);
 }
 
-.card-date {
-  font-size: 0.8rem;
-  color: #9ca3af;
+.search-input {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    margin-left: 0.5rem;
+    width: 100%;
 }
 
-.card-btn {
-  padding: 8px 16px;
-  border: 1px solid #9ca3af;
-  background-color: #f9fafb;
-  border-radius: 6px;
-  cursor: pointer;
-  align-self: flex-end; /* Posiciona o botão no canto inferior */
-  transition: background-color 0.2s;
+/* Paginações */
+.pagination-top, .pagination-footer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-.card-btn:hover {
-  background-color: #e5e7eb;
+.page-num {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition-perfect);
 }
 
-/* Sidebar */
-.sidebar {
-  width: 200px;
-  color: #9ca3af;
+.page-num.active {
+    background-color: var(--brand-pink);
+    color: #ffffff;
+    font-weight: bold;
 }
 
-.sidebar h3 {
-  color: #ffffff;
-  margin-bottom: 10px;
+.page-dots {
+    color: var(--text-muted);
 }
 
-.sidebar ul {
-  list-style: none;
-  margin-bottom: 20px;
+/* ==========================================================================
+   CONSTRUÇÃO DO SELETOR ARTICLE (:HOVER DO DESAFIO)
+   ========================================================================== */
+.post-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-normal);
+    transition: var(--transition-perfect);
+    cursor: pointer;
 }
 
-.sidebar a {
-  color: #9ca3af;
-  text-decoration: none;
-  line-height: 1.8;
+/* 🚀 DESAFIO APLICADO AQUI: Escala de 1.02 e intensificação/mudança da sombra */
+.post-card:hover, .post-card.hover-forced {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--brand-pink);
 }
 
-.tags span {
-  display: inline-block;
-  background-color: #374151;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  margin: 2px;
+/* Layout do Card Destaque (Horizontal) */
+.featured-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    margin-bottom: 3.5rem;
+}
+
+/* Áreas de Visualização dos Cards */
+.card-preview-area {
+    background-color: var(--brand-pink-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 220px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.featured-card .card-preview-area {
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+}
+
+/* Elementos Internos de Informações */
+.card-info-area {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: var(--brand-pink);
+    font-weight: 600;
+}
+
+.card-subtitle {
+    font-size: 1.4rem;
+    color: var(--text-title);
+    font-weight: 700;
+}
+
+.card-description {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag-pill {
+    background-color: var(--brand-pink-alpha);
+    border: 1px solid var(--border-color);
+    color: var(--brand-pink);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Autor */
+.card-author {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.author-thumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+/* Dividores Estilizados de Seção */
+.hover-gallery-section {
+    margin-top: 2rem;
+}
+
+.section-divider-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-divider-title h2 {
+    font-size: 1.6rem;
+    color: var(--brand-pink);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.title-decor {
+    color: var(--brand-pink);
+    font-size: 1.4rem;
+}
+
+/* Grid Inferior (3 Colunas) */
+.secondary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO INTERNA DOS MOCKUPS VISUAIS (SITES DENTRO DOS CARDS)
+   ========================================================================== */
+.window-mockup {
+    width: 100%;
+    height: 140px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.window-header {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0.3rem;
+}
+
+.window-header .dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+}
+
+.mock-line {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.title-line { width: 60%; height: 12px; margin-bottom: 0.5rem; background-color: var(--brand-pink-alpha); }
+.code-line-1 { width: 85%; height: 8px; }
+.code-line-2 { width: 45%; height: 8px; }
+
+/* Mockup Estilo Blueprint */
+.blueprint-style {
+    background-image: linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-color: var(--brand-pink-light);
+}
+
+/* Mockup Estilo Grid */
+.window-body-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    height: 100%;
+}
+
+.grid-box {
+    background-color: var(--brand-pink-alpha);
+    border: 1px dashed var(--brand-pink);
+    border-radius: 4px;
+}
+
+/* Paginação de Rodapé */
+.pagination-footer {
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.pag-arrow {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-title);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-perfect);
+}
+
+.pag-arrow:hover {
+    border-color: var(--brand-pink);
+    color: var(--brand-pink);
 }
