@@ -3,96 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Projeto Responsivo</title>
+  <title>Blog</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="header">
-    <div class="logo">MeuProjeto</div>
-    <button class="menu-btn" id="menuBtn">&#9776;</button>
-    <nav class="nav" id="navMenu">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section id="inicio" class="hero">
-      <h1>Bem-vindo ao Meu Primeiro Site</h1>
-      <p>Este é um projeto responsivo desenvolvido para a escola.</p>
-    </section>
-
-    <section id="sobre" class="cards-grid">
-      <div class="card">
-        <h3>Design Adaptável</h3>
-        <p>O layout se ajusta a telas de celulares, tablets e computadores.</p>
-      </div>
-      <div class="card">
-        <h3>HTML & CSS</h3>
-        <p>Estrutura limpa e estilização moderna usando Flexbox e Media Queries.</p>
-      </div>
-      <div class="card">
-        <h3>Interatividade</h3>
-        <p>JavaScript simples para alternar o menu em telas menores.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2026 - Criado para o Projeto Escolar</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Interativo - Projeto Escolar</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <header class="header">
-    <div class="logo">MeuProjeto</div>
     <nav class="nav">
-      <a href="index.html">Voltar ao Início</a>
+      <a href="#">Blog</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
     </nav>
   </header>
 
-  <main class="container">
-    <div class="quiz-card">
-      <h1 class="quiz-title">Quiz de Conhecimentos Gerais</h1>
-      
-      <!-- Container das Pergunta e Opções -->
-      <div id="quiz-container">
-        <h2 id="question-text">Carregando pergunta...</h2>
-        
-        <!-- Imagem da Pergunta -->
-        <div class="image-container">
-          <img id="question-image" src="" alt="Imagem da Pergunta">
+  <div class="container">
+    <main class="feed">
+
+      <article class="card">
+        <img src="https://picsum.photos/300/180?random=1" alt="Imagem do post" class="card-img">
+        <div class="card-content">
+          <h2>Como a Tecnologia Está Mudando as Nossas Vidas</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          <span class="card-date">15 de Outubro de 2024</span>
         </div>
+        <button class="card-btn">Leia mais</button>
+      </article>
 
-        <!-- Opções de Resposta -->
-        <div id="options-container" class="options-grid"></div>
+      <article class="card">
+        <img src="https://picsum.photos/300/180?random=2" alt="Imagem do post" class="card-img">
+        <div class="card-content">
+          <h2>O Guia Definitivo para um Estilo de Vida Saudável</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          <span class="card-date">15 de Outubro de 2024</span>
+        </div>
+        <button class="card-btn">Leia mais</button>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/300/180?random=3" alt="Imagem do post" class="card-img">
+        <div class="card-content">
+          <h2>Como a Tecnologia Está Mudando as Nossas Vidas</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          <span class="card-date">16 de Outubro de 2024</span>
+        </div>
+        <button class="card-btn">Leia mais</button>
+      </article>
+
+    </main>
+
+    <aside class="sidebar">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="#">Tecnologia</a></li>
+        <li><a href="#">Saúde</a></li>
+        <li><a href="#">Estilo de Vida</a></li>
+      </ul>
+
+      <h3>Tags</h3>
+      <div class="tags">
+        <span>Web</span>
+        <span>Design</span>
+        <span>CSS</span>
       </div>
-
-      <!-- Tela de Resultado Final -->
-      <div id="result-container" class="hidden">
-        <h2>Quiz Finalizado! 🎉</h2>
-        <p id="score-text"></p>
-        <button class="btn" onclick="restartQuiz()">Tentar Novamente</button>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2026 - Criado para o Projeto Escolar</p>
-  </footer>
+    </aside>
+  </div>
 
   <script src="script.js"></script>
 </body>
